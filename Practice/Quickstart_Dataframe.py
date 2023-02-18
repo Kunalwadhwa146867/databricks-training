@@ -146,7 +146,3 @@ rdd = spark.sparkContext.parallelize([
 df = spark.createDataFrame(rdd,schema='id int,name string,reg_date date,reg_timestamp timestamp')
 df = df.withColumn('name_lower',lower(df.name))
 df.show()
-
-# COMMAND ----------
-
-
