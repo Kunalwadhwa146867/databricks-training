@@ -180,3 +180,14 @@ pair_rdd = sc.parallelize([('a',1),('b',2),('c',3),('a',1),('b',2),('c',3)])
 grouped_rdd = pair_rdd.groupByKey()
 for ele in grouped_rdd.collect():
     print(ele[0],list(ele[1]))
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ## reduceByKey - merges locally on each mapper before sending results to a reducer, similarly to a “combiner” in MapReduce
+
+# COMMAND ----------
+
+from operator import add
+reduced_rdd = pair_rdd.reduceByKey(add)
+reduced_rdd.collect()
