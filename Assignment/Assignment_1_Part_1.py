@@ -1,4 +1,9 @@
 # Databricks notebook source
+# MAGIC %md
+# MAGIC ### Read csv file from one location, apply a filter clause and write it to another location
+
+# COMMAND ----------
+
 df = spark \
     .read \
     .format('csv') \
